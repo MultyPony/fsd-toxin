@@ -3,9 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        main: './src/index.js',
+        uiKit: './src/ui-kit.js'
+    },
     output: {
-      filename: 'main.js',
+    //   filename: 'main.js',
+      filename: '[name].[contentHash].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
     module: {
@@ -48,17 +52,19 @@ module.exports = {
           {
             filename: 'index.html',
             template: 'src/index.pug',
+            chunks: ['main'],
             inject: true,
             minify: false
         }),
-        // new HtmlWebpackPlugin({
-        //     filename: 'hotels.html',
-        //     template: 'src/hotels.pug',
-        //     inject: true,
-        //     minify: false
-        // }),
+        new HtmlWebpackPlugin({
+            filename: 'ui-kit.html',
+            template: 'src/ui-kit.pug',
+            chunks: ['uiKit'],
+            inject: true,
+            minify: false
+        }),
         new MiniCssExtractPlugin({
-          filename: 'main.css'
+          filename: '[name].css'
         })
     ]
   };

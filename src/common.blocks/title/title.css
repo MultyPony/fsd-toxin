@@ -1,0 +1,30 @@
+.title {
+    font-family: 'QuicksandBold';
+    font-style: normal;
+    font-weight: normal;
+    /* Dark 100% */
+    color: var(--dark-shade-100);
+}
+
+.title_l {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.title_m {
+    font-size: 19px;
+    line-height: 24px;
+}
+
+.title_s {
+    font-family: 'MontserratBold';
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 15px;
+    /* identical to box height */
+    text-transform: uppercase;
+}
+
+.title_lh_29 {
+    line-height: 29px;
+}
