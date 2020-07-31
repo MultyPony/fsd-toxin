@@ -1,0 +1,20 @@
+/* @import './fonts/Quicksand/Quicksand-VariableFont_wght.ttf'; */
+@font-face {
+    font-family: "Quicksand";
+    src: url('./fonts/Quicksand/Quicksand-VariableFont_wght.ttf'),
+         url('./fonts/Quicksand/Quicksand-Regular.eot') format('embedded-opentype'),
+         url('./fonts/Quicksand/Quicksand-Regular.otf') format('opentype'),
+         url('./fonts/Quicksand/Quicksand-Regular.svg') format('svg'),
+         url('./fonts/Quicksand/Quicksand-Regular.woff') format('woff');
+    }
+
+.title {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+
+    /* Dark 100% */
+    color: #1F2041;
+}

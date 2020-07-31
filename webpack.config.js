@@ -23,10 +23,21 @@ module.exports = {
           },
           {
             test: /\.(svg|png|jpg)$/i,
+            exclude: path.resolve(__dirname, './src/fonts'),
             loader: 'file-loader',
             options: {
               name: '[hash].[ext]',
               outputPath: 'images',
+              esModule: false,
+            },
+          },
+          {
+            test: /\.(ttf|eot|woff|woff2|svg|otf)$/,
+            include: path.resolve(__dirname, './src/fonts'),
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts',
               esModule: false,
             },
           }
