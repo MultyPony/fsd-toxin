@@ -1,4 +1,6 @@
-/* @import './fonts/Quicksand/Quicksand-VariableFont_wght.ttf'; */
+@import './common.blocks/title/title.css';
+@import './common.blocks/text/text.css';
+
 @font-face {
     font-family: "Quicksand";
     src: url('./fonts/Quicksand/Quicksand-VariableFont_wght.ttf'),
@@ -6,15 +8,24 @@
          url('./fonts/Quicksand/Quicksand-Regular.otf') format('opentype'),
          url('./fonts/Quicksand/Quicksand-Regular.svg') format('svg'),
          url('./fonts/Quicksand/Quicksand-Regular.woff') format('woff');
-    }
-
-.title {
-    font-family: 'Quicksand';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 30px;
-
-    /* Dark 100% */
-    color: #1F2041;
 }
+
+@font-face {
+    font-family: "Montserrat";
+    src: url('./fonts/Montserrat/Montserrat-Regular.ttf'),
+         url('./fonts/Montserrat/Montserrat-Regular.eot') format('embedded-opentype'),
+         url('./fonts/Montserrat/Montserrat-Regular.otf') format('opentype'),
+         url('./fonts/Montserrat/Montserrat-Regular.svg') format('svg'),
+         url('./fonts/Montserrat/Montserrat-Regular.woff') format('woff');
+}
+
+:root {
+    --dark-shade-100: #1F2041;
+    --dark-shade-75: rgba(31, 32, 65, 0.75);
+    --dark-shade-50: rgba(31, 32, 65, 0.5);
+    --dark-shade-25: rgba(31, 32, 65, 0.25);
+    --dark-shade-5: rgba(31, 32, 65, 0.05);
+
+    --purple: #BC9CFF;
+    --green: #6FCF97;
+  }

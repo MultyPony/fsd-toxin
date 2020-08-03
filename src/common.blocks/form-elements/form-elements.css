@@ -1,0 +1,17 @@
+.form-elements {
+    overflow: hidden;
+}
+
+.form-elements__wrap {
+    width: 1159px;
+    margin: 0 auto;
+}
+
+.form-elements__wrap:first-child {
+    margin-top: 140px;
+}
+
+.form-elements__col {
+    display: flex;
+    flex-flow: column nowrap;
+}

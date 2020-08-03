@@ -1,5 +1,9 @@
 @import './common.blocks/title/title.css';
 @import './common.blocks/text/text.css';
+@import './common.blocks/colors-type/colors-type.css';
+@import './common.blocks/form-elements/form-elements.css';
+@import './common.blocks/text-field/text-field.css';
+@import './common.blocks/dropdown/dropdown.css';
 
 @font-face {
     font-family: "Quicksand";
@@ -64,7 +68,7 @@ body {
     background-position: top 30px left 30px;
 }
 
-.colors-type {
+/* .colors-type {
     display: flex;
     justify-content: space-between;
     width: 1440px;
@@ -138,11 +142,11 @@ body {
 
 .colors-type__text-row-text {
     margin: 0;
-}
+} */
 
 /* RECT */
 
-.colors_type__rect {
+/* .colors_type__rect {
     width: 70px;
     height: 70px;
 
@@ -182,4 +186,9 @@ body {
 .colors_type__rect_color_green {
     background-color: #6FCF97;
     background-color: var(--green);
+} */
+
+.form-elements {
+    width: 1440px;
+    height: 1853px;
 }

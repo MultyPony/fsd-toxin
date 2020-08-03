@@ -1,0 +1,25 @@
+include ../input-num/input-num
+
+mixin dropdown(labelTxt, placeholderTxt)
+  .dropdown
+    label.dropdown__label(for="")= labelTxt
+    .dropdown__wrap
+      span.dropdown__arrow
+      input.dropdown__input(type="text" value= placeholderTxt readonly)
+      .dropdown__menu
+        ul.dropdown__menu-list
+          li.dropdown__menu-item
+            p.title.title_s.dropdown__menu-title взрослые
+            +input-num({val: 0})
+          li.dropdown__menu-item
+            p.title.title_s.dropdown__menu-title дети
+            +input-num({val: 2})
+          li.dropdown__menu-item
+            p.title.title_s.dropdown__menu-title младенцы
+            +input-num({val: 0})
+        .dropdown__btn-row
+          input(type="reset" value="очистить").title.title_s.title_color_ds-50.dropdown__apply-btn
+          button.title.title_s.title_color_purple.dropdown__apply-btn применить
+      
+
+

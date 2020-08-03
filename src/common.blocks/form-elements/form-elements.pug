@@ -1,0 +1,10 @@
+include ../text-field/text-field
+include ../dropdown/dropdown
+
+mixin form-elements
+  section.ui-section.form-elements
+    .form-elements__wrap
+      .form-elements__col
+        +text-field('Text Field', 'Email')
+        +text-field('Text Field', 'This is pretty awesome')
+        +dropdown('Dropdown', 'Сколько гостей')
