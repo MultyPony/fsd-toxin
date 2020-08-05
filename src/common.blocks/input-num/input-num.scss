@@ -1,0 +1,52 @@
+.input-num {
+    display: flex;
+    max-width: 92px;
+  }
+  
+  .input-num__display {
+    height: 30px;
+    width: 32px;
+    padding: 0;
+  
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 26px;
+  
+    border: none;
+    background-color: transparent;
+  
+    -moz-appearance: textfield;
+  }
+  
+  .input-num__displayinput::-webkit-outer-spin-button,
+  .input-num__display::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  .input-num__btn {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: rgba(31, 32, 65, 0.5);
+    
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    border-radius: 50%;
+    background-color: transparent;
+    box-sizing: border-box;
+  
+    cursor: pointer;
+  }
+  
+  .input-num__btn_disabled {
+    border-color: rgba(31, 32, 65, 0.25);
+    color: rgba(31, 32, 65, 0.25);
+  }

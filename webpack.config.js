@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: {
-        main: './src/index.js',
+        // main: './src/index.js',
         uiKit: './src/ui-kit.js'
     },
     output: {
@@ -22,9 +22,13 @@ module.exports = {
             }
           },
           {
-            test: /\.css$/,
-            use: [MiniCssExtractPlugin.loader, 'css-loader']
+            test: /\.scss$/,
+            use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
           },
+          // {
+          //   test: /\.css$/,
+          //   use: [MiniCssExtractPlugin.loader, 'css-loader']
+          // },
           {
             test: /\.(svg|png|jpg)$/i,
             exclude: path.resolve(__dirname, './src/fonts'),

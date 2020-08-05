@@ -1,10 +1,20 @@
 include ../text-field/text-field
 include ../dropdown/dropdown
+include ../masked-text-field/masked-text-field
+include ../date-dropdown/date-dropdown
+include ../ui-state/ui-state
 
 mixin form-elements
   section.ui-section.form-elements
     .form-elements__wrap
       .form-elements__col
-        +text-field('Text Field', 'Email')
-        +text-field('Text Field', 'This is pretty awesome')
-        +dropdown('Dropdown', 'Сколько гостей')
+        +ui-state('Default').form-elements__row
+          +text-field('Text Field', 'Email', 'tf-default')
+        .form-elements__row
+          +text-field('Text Field', 'Email')
+        +ui-state('Hover / Focus').form-elements__row
+          +text-field('Text Field', 'This is pretty awesome', 'tf-hover-focus')
+        +ui-state('Default').form-elements__row
+          +dropdown('Dropdown', 'Сколько гостей')
+        +masked-text-field('Masked Text Field', 'ДД.ММ.ГГГГ')
+        +date-dropdown()

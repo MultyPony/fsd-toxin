@@ -1,4 +1,7 @@
 .form-elements {
+    width: 1440px;
+    height: 1853px;
+
     overflow: hidden;
 }
 
@@ -14,4 +17,8 @@
 .form-elements__col {
     display: flex;
     flex-flow: column nowrap;
+}
+
+.form-elements__row {
+    margin-bottom: 20px;
 }

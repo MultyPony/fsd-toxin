@@ -66,8 +66,22 @@
     font-style: normal;
     font-weight: normal;
     text-align: right;
-    color: rgba(31, 32, 65, 0.25);
-    color: var(--dark-shade-25);
+    color: $dark-shade-25;
+}
+
+.colors-type__label_h1 {
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.colors-type__label_h2 {
+    font-size: 19px;
+    line-height: 23px;
+}
+
+.colors-type__label_h3 {
+    font-size: 12px;
+    line-height: 15px;
 }
 
 .colors-type__text-row-text {
@@ -84,36 +98,29 @@
 }
 
 .colors_type__rect_color_ds-100 {
-    background-color: #1F2041;
-    background-color: var(--dark-shade-100);
+    background-color: $dark-shade-100;
 }
 
 .colors_type__rect_color_ds-75 {
-    background-color: rgba(31, 32, 65, 0.75);
-    background-color: var(--dark-shade-75);
+    background-color: $dark-shade-75;
 }
 
 .colors_type__rect_color_ds-50 {
-    background-color: rgba(31, 32, 65, 0.50);
-    background-color: var(--dark-shade-50);
+    background-color: $dark-shade-50;
 }
 
 .colors_type__rect_color_ds-25 {
-    background-color: rgba(31, 32, 65, 0.25);
-    background-color: var(--dark-shade-25);
+    background-color: $dark-shade-25;
 }
 
 .colors_type__rect_color_ds-5 {
-    background-color: rgba(31, 32, 65, 0.05);
-    background-color: var(--dark-shade-5);
+    background-color: $dark-shade-5;
 }
 
 .colors_type__rect_color_purple {
-    background-color: #BC9CFF;
-    background-color: var(--purple);
+    background-color: $purple;
 }
 
 .colors_type__rect_color_green {
-    background-color: #6FCF97;
-    background-color: var(--green);
+    background-color: $green;
 }

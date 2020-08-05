@@ -1,5 +1,5 @@
-@import '../input-num/input-num.css';
-@import '../title/title.css';
+@import '../title/title.scss';
+@import '../input-num/input-num.scss';
 
 .dropdown__wrap {
     position: relative;
@@ -7,7 +7,7 @@
 }
 
 .dropdown__input {
-    width: 320px;
+    width: 100%;
     height: 44px;
     padding-left: 15px;
 
@@ -54,7 +54,7 @@
     display: block;
     width: 44px;
     height: 44px;
-    background-image: url('./expand_more.svg');
+    background-image: url('./common.blocks/dropdown/expand_more.svg');
     background-repeat: no-repeat;
     background-position: center;
 
