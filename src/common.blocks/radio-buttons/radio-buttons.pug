@@ -1,13 +1,11 @@
 mixin radio-buttons(options, arr)
-  - var index = 0;
 
   fieldset.radio-buttons
     legend.radio-buttons__title.title.title_s= options.title
     ul.radio-buttons__list
       each val, key in arr
         li.radio-buttons__item
-          label.radio-buttons__label.text(for= 'radio' + index)
-            input.radio-buttons__input(id='radio' + index  type="radio" name="radio-button" value= key)
+          label.radio-buttons__label.text(for= key)
+            input.radio-buttons__input(id= key  type="radio" name="radio-button" value= key)
             span.radio-buttons__icon
             span.radio-buttons__value= val
-            - index++;
