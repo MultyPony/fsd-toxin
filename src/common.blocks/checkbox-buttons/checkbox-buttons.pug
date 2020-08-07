@@ -1,0 +1,11 @@
+  
+mixin checkbox-buttons(options, arr)
+  fieldset.checkbox-buttons
+    legend.checkbox-buttons__title.title.title_s= options.legend
+    ul.checkbox-buttons__list
+      each val, index in arr
+        li.checkbox-buttons__item
+          label.checkbox-buttons__label(for= 'checkbox' + index) 
+            input.checkbox-buttons__checkbox(type="checkbox" id='checkbox' + index name="" value="")
+            span.checkbox-buttons__checkbox-icon
+            span.checkbox-buttons__value.text= val
