@@ -1,0 +1,51 @@
+.like-button {
+    display: flex;
+    width: 40px;
+}
+
+.like-button__wrapper {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 40px;
+    height: 20px;
+    padding-right: 6px;
+    padding-left: 18px;
+    padding-bottom: 2px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+
+    color: $dark-shade-25;
+
+
+    background: #FFFFFF;
+    background-image: url('./common.blocks/like-button/favorite_border.svg');
+    background-repeat: no-repeat;
+    background-position: left 5px center;
+
+    border: 1px solid $dark-shade-25;
+    border-radius: 10px;
+
+    cursor: pointer;
+    
+    transition: justify-content 2s;
+}
+
+.like-button__value::selection {
+    color: inherit;
+    background-color: transparent;
+}
+
+
+.like-button__active {
+    color: $purple;
+
+    border-color: $purple;
+    background-image: url('./common.blocks/like-button/favorite.svg');
+}
