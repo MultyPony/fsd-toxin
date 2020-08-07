@@ -1,0 +1,17 @@
+.rate-button {
+    display: flex;
+}
+
+.rate-button__star {
+    // display: block;
+    width: 24px;
+    height: 24px;
+
+    background-image: url('./common.blocks/rate-button/star_border.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.rate-button__star_active {
+    background-image: url('./common.blocks/rate-button/star.svg');
+}

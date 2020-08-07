@@ -1,0 +1,18 @@
+mixin rate-button(starNum)
+  - var i = 0;
+  - var sN = starNum;
+  .rate-button
+    - while (i < 5) {
+    -   if (sN > 0) {
+          <span class='rate-button__star rate-button__star_active'></span>
+    -     sN--;
+    -    }
+    -    else {
+          <span class='rate-button__star'></span>
+    -    }
+    -    i++;
+    -  }
+
+
+
+  
