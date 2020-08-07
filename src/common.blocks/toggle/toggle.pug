@@ -1,0 +1,8 @@
+  
+mixin toggle(options)
+  fieldset.toggle
+    legend.toggle__title.title.title_s= options.title
+    label.toggle__label(for= options.id) 
+        input.toggle__checkbox(type="checkbox" id= options.id name="" value= options.value)
+        span.toggle__checkbox-icon
+        span.toggle__text.text= options.text

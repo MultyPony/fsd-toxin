@@ -1,0 +1,59 @@
+.toggle {
+    @include fieldset-reset;
+}
+
+.toggle__checkbox {
+    display: none;
+}
+
+.toggle__checkbox-icon {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 20px;
+
+
+    background: #FFFFFF;
+    border: 1px solid $dark-shade-25;
+    border-radius: 10px;
+
+    cursor: pointer;
+    
+    transition: justify-content 2s;
+}
+
+.toggle__checkbox-icon::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+    margin-right: 4px;
+
+    background: $dark-shade-25;
+    border-radius: 10px;
+
+    transition: transform .4s;
+}
+
+.toggle__checkbox:checked + .toggle__checkbox-icon {
+    border-color: $purple;
+}
+
+.toggle__checkbox:checked + .toggle__checkbox-icon::after {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    transition: transform .4s;
+    transform: translateX(18px);
+}
+
+.toggle__label {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.toggle__text {
+    margin-left: 10px;
+}
