@@ -1,4 +1,4 @@
-mixin text-field(label, placeholder, id)
-  .text-field
-    label.text-field__label(for= id)= label
-    input.text-field__input(id= id type="text" placeholder= placeholder)
+include ../base-field/base-field
+
+mixin text-field(options)
+  +base-field(options)(class= 'text-field ' + ((attributes.class == undefined) ? '' : attributes.class))

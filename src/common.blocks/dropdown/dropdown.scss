@@ -1,6 +1,10 @@
 @import '../title/title.scss';
 @import '../input-num/input-num.scss';
 
+.dropdown {
+    width: 100%;
+}
+
 .dropdown__wrap {
     position: relative;
     display: inline-block;
@@ -54,7 +58,7 @@
     display: block;
     width: 44px;
     height: 44px;
-    background-image: url('./common.blocks/dropdown/expand_more.svg');
+    background-image: url('./common.blocks/base-dropdown/expand_more.svg');
     background-repeat: no-repeat;
     background-position: center;
 
@@ -90,11 +94,12 @@
     position: absolute;
     top: 100%;
     left: 0;
+    z-index: 1;
     
     display: none;
-    width: 320px;
+    width: 100%;
     padding-top: 7px;
-    padding-bottom: 13px;
+    padding-bottom: 7px;
     padding-left: 15px;
     padding-right: 7px;
 
@@ -115,10 +120,9 @@
 
 }
 
-.show .dropdown__input {
+.show .base-field__input {
     border-radius: 4px 4px 0 0;
-    border-color: var(--dark-shade-50);
-    border-color: rgba(31, 32, 65, 0.50);
+    border-color: $dark-shade-50;
 }
 
   .dropdown__menu-list {
@@ -130,6 +134,7 @@
   .dropdown__menu-item {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       margin-bottom: 7px;
   }
 

@@ -1,0 +1,32 @@
+.base-dropdown .base-field__input {
+    color: $dark-shade-75;
+
+    cursor: default;
+}
+
+.base-dropdown__wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.base-dropdown__arrow {
+    position: absolute;
+    top: 0px;
+    right: 0;
+
+    display: block;
+    width: 44px;
+    height: 44px;
+    background-image: url('./common.blocks/base-dropdown/expand_more.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    cursor: pointer;
+}
+
+.base-dropdown__arrow:hover + .base-field__input {
+    line-height: 24px;
+    color: $dark-shade-75;
+
+    border-color: $dark-shade-50;
+}

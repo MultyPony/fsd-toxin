@@ -1,4 +1,5 @@
-mixin masked-text-field(labelTxt, placeholderTxt)
-  .masked-text-field.text-field
-    label.text-field__label(for="")= labelTxt
-    input.text-field__input(type="text" placeholder= placeholderTxt)
+//- include ../base-field/base-field
+include ../text-field/text-field
+
+mixin masked-text-field(options)
+  +text-field(options).masked-text-field

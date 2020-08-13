@@ -1,0 +1,18 @@
+.range-slider {
+    width: 266px;
+}
+
+.range-slider__text-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    margin-bottom: 23px;
+}
+
+.range-slider__input {
+    text-align: right;
+
+    border: 0;
+}

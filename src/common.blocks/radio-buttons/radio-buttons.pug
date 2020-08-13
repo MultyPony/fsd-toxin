@@ -5,7 +5,7 @@ mixin radio-buttons(options, arr)
     ul.radio-buttons__list
       each val, key in arr
         li.radio-buttons__item
-          label.radio-buttons__label.text(for= key)
+          label.radio-buttons__label(for= key)
             input.radio-buttons__input(id= key  type="radio" name="radio-button" value= key)
             span.radio-buttons__icon
-            span.radio-buttons__value= val
+            span.radio-buttons__value.text= val

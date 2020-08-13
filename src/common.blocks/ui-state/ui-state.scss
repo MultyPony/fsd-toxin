@@ -1,14 +1,16 @@
 .ui-state {
-    display: inline-block;
+    // display: inline-block;
 }
 
 .ui-state__wrapper {
     position: relative;
-    display: inline-block;
+    // display: inline-block;
 }
 
 .ui-state__label {
     position: absolute;
+    // top: -3px;
+    top: 0px;
     right: 0;
 
     margin: 0;
@@ -24,4 +26,23 @@
 
     /* Dark 50% */
     color: $dark-shade-50;
+}
+
+.ui-state__label_top-3 {
+    top: -3px;
+}
+
+.ui-state__label_top_0 {
+    top: 0;
+}
+
+.ui-state__label_top_5 {
+    top: -3px;
+}
+
+.ui-state_active input {
+    line-height: 24px;
+    color: $dark-shade-75;
+
+    border-color: $dark-shade-50;
 }

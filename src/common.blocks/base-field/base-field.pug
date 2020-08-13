@@ -1,0 +1,11 @@
+mixin base-field(options)
+  - var str = attributes.class === undefined ? '' : attributes.class
+  - var isReadOnly = str.includes('base-dropdown') ? true : false;
+
+  .base-field(class= attributes.class)
+    label.base-field__label(for= options.id)= options.label
+    .base-field__wrap
+        block
+        //- if isReadOnly
+          block arrow
+        input.base-field__input(id= options.id type="text" placeholder= options.placeholder value!= options.value readonly= isReadOnly)

@@ -11,6 +11,7 @@
 
 .radio-buttons__label {
     display: flex;
+    align-items: flex-end;
 }
 
 .radio-buttons__value {
@@ -49,12 +50,13 @@
 }
 
 .radio-buttons__list {
+    @include list-none;
     display: flex;
-    margin: 0;
-    margin-top: 16px;
-    padding: 0;
+    margin-top: 12px;
+    // margin: 0;
+    // padding: 0;
 
-    list-style: none;
+    // list-style: none;
 }
 
 .radio-buttons__item {

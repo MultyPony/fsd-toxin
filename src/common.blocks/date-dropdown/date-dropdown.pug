@@ -1,5 +1,7 @@
-include ../dropdown/dropdown
+include ../base-dropdown/base-dropdown
 
-mixin date-dropdown
-  +dropdown('date Dropdown', 'ДД.ММ.ГГГГ')(class="date-dropdown")
-  +dropdown('date Dropdown', '19.08.2019')(class="date-dropdown")
+mixin date-dropdown(option)
+  .date-dropdown
+    .date-dropdown__wrapper
+      +base-dropdown({label: 'date Dropdown', placeholder: option.placeholder, value: option.val1}).date-dropdown__start
+      +base-dropdown({label: 'date Dropdown', placeholder: option.placeholder, value: option.val2}).date-dropdown__end

@@ -3,18 +3,160 @@ include ../dropdown/dropdown
 include ../masked-text-field/masked-text-field
 include ../date-dropdown/date-dropdown
 include ../ui-state/ui-state
+include ../base-field/base-field
+include ../base-dropdown/base-dropdown
+include ../filter-date-dropdown/filter-date-dropdown
+include ../subscription-text-field/subscription-text-field
+include ../checkbox-buttons/checkbox-buttons
+include ../radio-buttons/radio-buttons
+include ../toggle/toggle
+include ../like-button/like-button
+include ../rate-button/rate-button
+include ../range-slider/range-slider
+include ../pagination/pagination
+
 
 mixin form-elements
   section.ui-section.form-elements
-    .form-elements__wrap
-      .form-elements__col
-        +ui-state('Default').form-elements__row
-          +text-field('Text Field', 'Email', 'tf-default')
-        .form-elements__row
-          +text-field('Text Field', 'Email')
-        +ui-state('Hover / Focus').form-elements__row
-          +text-field('Text Field', 'This is pretty awesome', 'tf-hover-focus')
-        +ui-state('Default').form-elements__row
-          +dropdown('Dropdown', 'Сколько гостей')
-        +masked-text-field('Masked Text Field', 'ДД.ММ.ГГГГ')
-        +date-dropdown()
+    .form-elements__container
+      section.form-elements__main-elements
+        .form-elements__col
+          ul.dropdown-list
+            li.dropdown-list__item
+              +ui-state('Default')
+                +text-field({label: 'Text Field', placeholder: 'Email', id: 'tf-default'})
+            li.dropdown-list__item
+              +ui-state('Hover / Focus', 'ui-state__label_top_0').ui-state_active
+                +text-field({label: 'Text Field', placeholder: 'Email', id: 'tf-hover-focus', value: 'This is pretty awesome'})
+            li.dropdown-list__item
+              +ui-state('Default')
+                +dropdown({label: 'Dropdown', id: 'tf-hover-focus', value: 'Сколько гостей'}, ['спальни', 'кровати', 'ванные комнаты'])
+            li.dropdown-list__item
+              +ui-state('Default')         
+                +masked-text-field({label: 'Masked Text Field', placeholder: 'ДД.ММ.ГГГГ'})
+            li.dropdown-list__item
+              +date-dropdown({placeholder: 'ДД.ММ.ГГГГ', val1: 'ДД.ММ.ГГГГ', val2: '19.08.2019'})
+            li.dropdown-list__item
+              +filter-date-dropdown({label: 'filter date dropdown', value: '19 авг - 23 авг'})
+            li.dropdown-list__item
+              +subscription-text-field({label: 'subscription text field', placeholder: 'Email'})
+
+        .form-elements__col
+          ul.check-buttons-list
+            li.check-buttons-list__item
+              +checkbox-buttons({legend: 'Checkbox Buttons'},
+              {
+                'smoking':'Можно курить',
+                'pets': 'Можно с питомцами',
+                'guests':'Можно пригласить гостей (до 10 человек)',
+              })
+            li.check-buttons-list__item
+              +radio-buttons({title: 'Radio Buttons'}, {'men': 'Мужчина', 'women': 'Женщина'})
+            li.check-buttons-list__item
+              h3.title.title_s toggle
+              +toggle({title: 'toggle', text: 'Получать спецпредложения', id: 'special'})
+              +toggle({text: 'Получать спецпредложения', id: 'special2'})
+            li.check-buttons-list__item
+              h3.title.title_s.check-buttons-list__title like button
+              .form-elements__likes-wrap
+                +like-button({value: 11})
+                +like-button({value: 2})
+            li.check-buttons-list__item
+              h3.title.title_s.check-buttons-list__title rate button
+              .form-elements__rate-wrap
+                +rate-button(4)
+                +rate-button(5)
+
+        .form-elements__col
+          ul.slider-btns-list
+            li.slider-btns-list__item
+              +range-slider({title: 'range slider'})
+            li.slider-btns-list__item
+              h3.title.title_s.slider-btns-list__title buttons
+              ul.buttons-list
+                li.buttons-list__item
+                  button.button.button_opaque Click me
+                  button.button.button_opaque.button_opaque-hover Click me
+                li.buttons-list__item
+                  button.button.button_transparent Click me
+                  button.button.button_transparent.button_transparent-hover Click me
+                li.buttons-list__item
+                  button.button Click me
+                  button.button.button_c_ds-50 Click me
+                li.buttons-list__item
+                  button.button.button_opaque.button_with-arrow перейти к оплате
+            li.slider-btns-list__item
+              h3.title.title_s.slider-btns-list__title pagination
+              +pagination
+
+
+      section.form-elements__dropdowns
+        .form-elements__col
+          +ui-state('Default').form-elements__row
+            +dropdown({label: 'Dropdown', id: 'tf-hover-focus', value: '2 спальни, 2 кровати...'}, ['Ivan', 'Alex', 'Anton'])
+          +ui-state('expanded').form-elements__row
+            +dropdown({label: 'Dropdown', id: 'tf-hover-focus', value: '2 спальни, 2 кровати...'}, ['Ivan', 'Alex', 'Anton'])
+      section.form-elements__lists-and-checkboxs
+      section.form-elements__other
+
+
+
+
+          //- +ui-state('Default').form-elements__row
+          //-   +text-field({label: 'Text Field', placeholder: 'Email', id: 'tf-default'})
+          //- +ui-state('Hover / Focus', 'ui-state__label_top_0').form-elements__row.ui-state_active
+          //-   +text-field({label: 'Text Field', placeholder: 'Email', id: 'tf-hover-focus', value: 'This is pretty awesome'})
+          //- +ui-state('Default').form-elements__row
+          //-   +dropdown({label: 'Dropdown', id: 'tf-hover-focus', value: 'Сколько гостей'}, ['спальни', 'кровати', 'ванные комнаты'])
+          //- +ui-state('Default').form-elements__row          
+          //-   +masked-text-field({label: 'Masked Text Field', placeholder: 'ДД.ММ.ГГГГ'})        
+          //- .form-elements__row
+          //-   +date-dropdown({placeholder: 'ДД.ММ.ГГГГ', val1: 'ДД.ММ.ГГГГ', val2: '19.08.2019'})
+          //- .form-elements__row
+          //-   +filter-date-dropdown({label: 'filter date dropdown', value: '19 авг - 23 авг'})
+          //- .form-elements__row
+          //-   +subscription-text-field({label: 'subscription text field', placeholder: 'Email'})
+
+
+
+          //- .form-elements__row
+          //-   +checkbox-buttons({legend: 'Checkbox Buttons'},
+          //-    {
+          //-     'smoking':'Можно курить',
+          //-     'pets': 'Можно с питомцами',
+          //-     'guests':'Можно пригласить гостей (до 10 человек)',
+          //-   })
+          //- .form-elements__row
+          //-   +radio-buttons({title: 'Radio Buttons'}, {'men': 'Мужчина', 'women': 'Женщина'})
+          //- .form-elements__row
+          //-   +toggle({title: 'toggle', text: 'Получать спецпредложения', id: 'special'})
+          //-   +toggle({text: 'Получать спецпредложения', id: 'special2'})
+          //- .form-elements__row
+          //-   h3.title.title_s like button
+          //-   .form-elements__likes-wrap
+          //-     +like-button({value: 11})
+          //-     +like-button({value: 2})
+          //- .form-elements__row
+          //-   h3.title.title_s rate button
+          //-   .form-elements__rate-wrap
+          //-     +rate-button(4)
+          //-     +rate-button(5)
+
+
+          //- .form-elements__row
+          //-   +range-slider({title: 'range slider'})
+          //- .form-elements__row
+          //-   h3.title.title_s buttons
+          //-   button.button.button_opaque Click me
+          //-   button.button.button_opaque.button_opaque-hover Click me
+          //- .form-elements__row
+          //-   button.button.button_transparent Click me
+          //-   button.button.button_transparent.button_transparent-hover Click me
+          //- .form-elements__row
+          //-   button.button Click me
+          //-   button.button.button_c_ds-50 Click me
+          //- .form-elements__row
+          //-   button.button.button_opaque.button_with-arrow перейти к оплате
+          //- .form-elements__row
+          //-   h3.title.title_s pagination
+          //-   +pagination

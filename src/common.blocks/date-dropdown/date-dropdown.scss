@@ -1,3 +1,12 @@
 .date-dropdown {
+    width: 320px;
+}
+
+.date-dropdown__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-dropdown__start, .date-dropdown__end{
     width: 150px;
 }

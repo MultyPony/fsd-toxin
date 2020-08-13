@@ -1,5 +1,5 @@
 let dropMenu = document.querySelector('.dropdown');
-let inputDrop = document.querySelector('.dropdown__arrow');
+let inputDrop = document.querySelector('.base-dropdown__arrow');
 
 inputDrop.addEventListener('click', function(evt){
     evt.preventDefault();

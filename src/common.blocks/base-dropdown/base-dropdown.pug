@@ -1,0 +1,19 @@
+//- extends ../base-field/base-field
+//- block arrow
+//-     span.base-dropdown__arrow
+
+mixin base-dropdown(options)
+  +base-field(options)(class!= 'base-dropdown ' + ((attributes.class == undefined) ? '' : attributes.class))
+    span.base-dropdown__arrow
+    block
+
+
+
+
+
+
+//- include ../base-field/base-field
+
+//- mixin base-dropdown(options)
+//-   +base-field(options).base-dropdown
+//-       span.base-dropdown__arrow

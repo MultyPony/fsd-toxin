@@ -1,0 +1,7 @@
+mixin range-slider(options)
+  .range-slider
+    p.range-slider__text-wrap
+      label.title.title_s.range-slider__title(for="amount")= options.title
+      input.text.text_s.range-slider__input(type="text" id="amount" readonly)
+
+    <div id="slider-range"></div>

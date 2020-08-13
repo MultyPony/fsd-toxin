@@ -1,0 +1,8 @@
+//- extends ../base-field/base-field
+//- block arrow
+//-     span.subscription-text-field
+
+mixin subscription-text-field(options)
+    //- include ../base-field/base-field
+    +base-field(options).subscription-text-field
+        span.subscription-text-field__arrow

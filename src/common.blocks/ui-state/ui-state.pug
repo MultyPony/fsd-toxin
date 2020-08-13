@@ -1,5 +1,5 @@
-mixin ui-state(label)
+mixin ui-state(label, mod)
     .ui-state(class= attributes.class)
         .ui-state__wrapper
-            p.ui-state__label= label
+            p.ui-state__label(class= mod)= label
             block

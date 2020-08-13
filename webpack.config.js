@@ -1,3 +1,4 @@
+// const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -25,10 +26,10 @@ module.exports = {
             test: /\.scss$/,
             use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
           },
-          // {
-          //   test: /\.css$/,
-          //   use: [MiniCssExtractPlugin.loader, 'css-loader']
-          // },
+          {
+            test: /\.css$/,
+            use: [MiniCssExtractPlugin.loader, 'css-loader']
+          },
           {
             test: /\.(svg|png|jpg)$/i,
             exclude: path.resolve(__dirname, './src/fonts'),
@@ -69,6 +70,20 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
           filename: '[name].css'
-        })
-    ]
+        }),
+        // new webpack.ProvidePlugin({
+        //   "$":"jquery",
+        //   "jQuery":"jquery",
+        //   "window.jQuery":"jquery"
+        // }),
+    ],
+    resolve : {
+      alias: {
+        // bind version of jquery-ui
+        "jquery-ui": "jquery-ui/ui/widgets",
+        'jquery-ui-css': 'jquery-ui/../../themes/base',
+        // bind to modules;
+        modules: path.join(__dirname, "node_modules"),
+      }
+    }
   };

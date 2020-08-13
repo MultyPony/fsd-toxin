@@ -32,15 +32,13 @@
 }
 
 .checkbox-buttons__list {
-    list-style: none;
-    margin: 0;
+    @include list-none;
     margin-top: 16.56px;
-    padding: 0;
 }
 
 .checkbox-buttons__item:nth-child(2n) {
-    margin-top: 12px;
-    margin-bottom: 11px;
+    margin-top: 11px;
+    margin-bottom: 10px;
 }
 
 .checkbox-buttons__label {
