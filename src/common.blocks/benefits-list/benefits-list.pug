@@ -1,0 +1,7 @@
+mixin benefits-list(arr)
+  ul.benefits-list
+    each val, key in arr
+      li.benefits-list__item
+        p.benefits-list__value.text
+          span.benefits-list__title.text_bold= key
+          = val
