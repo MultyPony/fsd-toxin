@@ -1,0 +1,24 @@
+.ext-checkbox-list .checkbox-buttons__list {
+    display: none;
+}
+
+.ext-checkbox-list__arrow {
+    display: block;
+    width: 12px;
+    height: 8px;
+    margin-left: 43px;
+
+    background-image: url('./common.blocks/base-dropdown/expand_more.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    cursor: pointer;
+}
+
+.show .checkbox-buttons__list {
+    display: block;
+}
+
+.show .ext-checkbox-list__arrow {
+    background-image: url('./common.blocks/ext-checkbox-list/expand_more_r.svg');
+}
