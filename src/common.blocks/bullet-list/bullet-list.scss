@@ -1,0 +1,27 @@
+.bullet-list {
+  // margin: 0;
+  // padding: 0;
+  @include list-none();
+}
+
+.bullet-list__item {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.bullet-list__item::before {
+  content: '';
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 10.43px;
+  height: 10px;
+  margin-right: 10.43px;
+
+  background: rgba(31, 32, 65, 0.25);
+  border-radius: 50%;
+}
+
+.bullet-list__val {
+  white-space: pre-line;
+}
