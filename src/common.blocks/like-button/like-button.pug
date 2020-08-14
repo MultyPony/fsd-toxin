@@ -1,5 +1,6 @@
-mixin like-button(options)
-  .like-button
+mixin like-button(value)
+  - var className = attributes.class === undefined ? '' : attributes.class;
+  .like-button(class= className)
     .like-button__wrapper
-      span.like-button__value= options.value
+      span.like-button__value= value
 

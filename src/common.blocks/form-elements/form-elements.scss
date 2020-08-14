@@ -11,9 +11,15 @@
     margin-top: 142px;
 }
 
-.form-elements__main-elements, .form-elements__lists-and-checkboxs{
+.form-elements__main-elements, 
+.form-elements__lists-and-checkboxs, 
+.form-elements__other {
     display: flex;
 
+}
+
+.form-elements__other {
+    margin-top: 40px;
 }
 
 .form-elements__dropdowns {

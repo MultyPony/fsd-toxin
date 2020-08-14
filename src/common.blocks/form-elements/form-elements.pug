@@ -18,7 +18,7 @@ include ../ext-checkbox-list/ext-checkbox-list
 include ../rich-checkbox-buttons/rich-checkbox-buttons
 include ../bullet-list/bullet-list
 include ../benefits-list/benefits-list
-
+include ../review/review
 
 mixin form-elements
   section.ui-section.form-elements
@@ -63,8 +63,8 @@ mixin form-elements
             li.check-buttons-list__item
               h3.title.title_s.check-buttons-list__title like button
               .form-elements__likes-wrap
-                +like-button({value: 11})
-                +like-button({value: 2})
+                //- +like-button(11)
+                //- +like-button(2)
             li.check-buttons-list__item
               h3.title.title_s.check-buttons-list__title rate button
               .form-elements__rate-wrap
@@ -133,7 +133,17 @@ mixin form-elements
           ])
         
       section.form-elements__other
+        .form-elements__col
           +benefits-list({
             'Комфорт': 'Шумопоглощающие стены',
             'Удобство': 'Окно в каждой из спален',
           })
+        .form-elements__col(style="width: auto;")
+          +review({
+              picture: 'murad',
+              alt: 'Фото Мурада',
+              likes: '11',
+              name: 'Мурад Сарафанов',
+              date: '5 дней назад',
+              text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+            })

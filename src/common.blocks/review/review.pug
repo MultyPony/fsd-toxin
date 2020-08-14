@@ -1,0 +1,20 @@
+//- {
+//-   picture: '',
+//-   alt: '',
+//-   likes: '',
+//-   name: '',
+//-   date: '',
+//-   text: '',
+//- }
+
+
+mixin review(options)
+  blockquote.review
+    .review__col
+      img.review__photo(src=require('./common.blocks/review/' + options.picture + '.png') alt= options.alt width="48" height="48")
+      +like-button(options.likes).review__likes
+    .review__col
+      p.review__name-date-wrap.text
+        cite.review__name.text.text_bold= options.name 
+        time.review__date(datetime="")= options.date
+      p.review__text.text= options.text
