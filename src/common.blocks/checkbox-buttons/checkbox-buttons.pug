@@ -1,11 +1,22 @@
   
 mixin checkbox-buttons(options, arr)
-  fieldset.checkbox-buttons
-    legend.checkbox-buttons__title.title.title_s= options.legend
+  - var isExt = attributes.class == 'ext-checkbox-list' ? true : false;
+  - var isRich = attributes.class == 'rich-checkbox-buttons' ? true : false;
+
+  fieldset.checkbox-buttons(class= attributes.class)
+    .checkbox-buttons__title-wrap
+      legend.checkbox-buttons__title.title.title_s= options.title
+      if isExt
+        span.ext-checkbox-list__arrow
     ul.checkbox-buttons__list
       each val, key in arr
         li.checkbox-buttons__item
           label.checkbox-buttons__label(for= key) 
             input.checkbox-buttons__checkbox(type="checkbox" id= key name="" value= key)
             span.checkbox-buttons__checkbox-icon
-            span.checkbox-buttons__value.text.text_lh-checkbox= val
+            if isRich
+              .wrap
+                span.checkbox-buttons__value.text.text_lh-checkbox.text_bold= val[0]
+                p.checkbox-buttons__desc.text.text_s.text_color_ds-50= val[1]
+            else 
+              span.checkbox-buttons__value.text.text_lh-checkbox.text_color_ds-50= val
