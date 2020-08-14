@@ -11,7 +11,7 @@
     margin-top: 142px;
 }
 
-.form-elements__main-elements {
+.form-elements__main-elements, .form-elements__lists-and-checkboxs{
     display: flex;
 
 }
@@ -29,10 +29,6 @@
 .form-elements__col:nth-child(2) {
     margin-left: 126px;
     margin-right: 132px;
-}
-
-.form-elements__row {
-    // margin-bottom: 20px;
 }
 
 .form-elements__likes-wrap {
@@ -115,4 +111,9 @@
 
 .buttons-list__item .button {
     margin-right: 16px;
+}
+
+.form-elements__bullet-title {
+    margin: 0;
+    margin-bottom: 13px;
 }

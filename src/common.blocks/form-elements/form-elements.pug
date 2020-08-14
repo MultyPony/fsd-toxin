@@ -14,6 +14,10 @@ include ../like-button/like-button
 include ../rate-button/rate-button
 include ../range-slider/range-slider
 include ../pagination/pagination
+include ../ext-checkbox-list/ext-checkbox-list
+include ../rich-checkbox-buttons/rich-checkbox-buttons
+include ../bullet-list/bullet-list
+include ../benefits-list/benefits-list
 
 
 mixin form-elements
@@ -44,7 +48,7 @@ mixin form-elements
         .form-elements__col
           ul.check-buttons-list
             li.check-buttons-list__item
-              +checkbox-buttons({legend: 'Checkbox Buttons'},
+              +checkbox-buttons({title: 'Checkbox Buttons'},
               {
                 'smoking':'Можно курить',
                 'pets': 'Можно с питомцами',
@@ -92,71 +96,44 @@ mixin form-elements
 
       section.form-elements__dropdowns
         .form-elements__col
-          +ui-state('Default').form-elements__row
-            +dropdown({label: 'Dropdown', id: 'tf-hover-focus', value: '2 спальни, 2 кровати...'}, ['Ivan', 'Alex', 'Anton'])
-          +ui-state('expanded').form-elements__row
-            +dropdown({label: 'Dropdown', id: 'tf-hover-focus', value: '2 спальни, 2 кровати...'}, ['Ivan', 'Alex', 'Anton'])
+          //- +ui-state('Default').form-elements__row
+          //-   +dropdown({label: 'Dropdown', id: 'tf-hover-focus', value: '2 спальни, 2 кровати...'}, ['Ivan', 'Alex', 'Anton'])
+          //- +ui-state('expanded').form-elements__row
+          //-   +dropdown({label: 'Dropdown', id: 'tf-hover-focus', value: '2 спальни, 2 кровати...'}, ['Ivan', 'Alex', 'Anton'])
       section.form-elements__lists-and-checkboxs
+        .form-elements__col
+          //- +ext-checkbox-list({title: 'expandable checkbox list'},{
+          //-       'alco':'Можно бухать',
+          //-       'blyadi': 'Можно со шлюхами',
+          //-       'gs':'Можно пригласить гс',
+          //-     })
+          +ext-checkbox-list({title: 'expandable checkbox list'},{
+                'diner':'Завтрак',
+                'table': 'Письменный стол',
+                'chair':'Стул для кормления',
+                'bed':'Кроватка',
+                'tv':'Телевизор',
+                'shower':'Шампунь',
+                'tv2':'Телевизор',
+                'shower2':'Шампунь',
+              })
+
+        .form-elements__col
+          +rich-checkbox-buttons({title: 'rich Checkbox Buttons'},
+          {
+            'wide-corridor': ['Широкий коридор','Ширина коридоров в номере\nне менее 91 см.'],
+            'assistant': ['Помощник для инвалидов','На 1 этаже вас встретит специалист\n  и проводит до номера.'],
+          })
+        .form-elements__col
+          h3.title.title_s.form-elements__bullet-title bullet list
+          +bullet-list([
+            'Нельзя с питомцами', 
+            'Без вечеринок и мероприятий',
+            'Время прибытия — после 13:00,\n а выезд до 12:00'
+          ])
+        
       section.form-elements__other
-
-
-
-
-          //- +ui-state('Default').form-elements__row
-          //-   +text-field({label: 'Text Field', placeholder: 'Email', id: 'tf-default'})
-          //- +ui-state('Hover / Focus', 'ui-state__label_top_0').form-elements__row.ui-state_active
-          //-   +text-field({label: 'Text Field', placeholder: 'Email', id: 'tf-hover-focus', value: 'This is pretty awesome'})
-          //- +ui-state('Default').form-elements__row
-          //-   +dropdown({label: 'Dropdown', id: 'tf-hover-focus', value: 'Сколько гостей'}, ['спальни', 'кровати', 'ванные комнаты'])
-          //- +ui-state('Default').form-elements__row          
-          //-   +masked-text-field({label: 'Masked Text Field', placeholder: 'ДД.ММ.ГГГГ'})        
-          //- .form-elements__row
-          //-   +date-dropdown({placeholder: 'ДД.ММ.ГГГГ', val1: 'ДД.ММ.ГГГГ', val2: '19.08.2019'})
-          //- .form-elements__row
-          //-   +filter-date-dropdown({label: 'filter date dropdown', value: '19 авг - 23 авг'})
-          //- .form-elements__row
-          //-   +subscription-text-field({label: 'subscription text field', placeholder: 'Email'})
-
-
-
-          //- .form-elements__row
-          //-   +checkbox-buttons({legend: 'Checkbox Buttons'},
-          //-    {
-          //-     'smoking':'Можно курить',
-          //-     'pets': 'Можно с питомцами',
-          //-     'guests':'Можно пригласить гостей (до 10 человек)',
-          //-   })
-          //- .form-elements__row
-          //-   +radio-buttons({title: 'Radio Buttons'}, {'men': 'Мужчина', 'women': 'Женщина'})
-          //- .form-elements__row
-          //-   +toggle({title: 'toggle', text: 'Получать спецпредложения', id: 'special'})
-          //-   +toggle({text: 'Получать спецпредложения', id: 'special2'})
-          //- .form-elements__row
-          //-   h3.title.title_s like button
-          //-   .form-elements__likes-wrap
-          //-     +like-button({value: 11})
-          //-     +like-button({value: 2})
-          //- .form-elements__row
-          //-   h3.title.title_s rate button
-          //-   .form-elements__rate-wrap
-          //-     +rate-button(4)
-          //-     +rate-button(5)
-
-
-          //- .form-elements__row
-          //-   +range-slider({title: 'range slider'})
-          //- .form-elements__row
-          //-   h3.title.title_s buttons
-          //-   button.button.button_opaque Click me
-          //-   button.button.button_opaque.button_opaque-hover Click me
-          //- .form-elements__row
-          //-   button.button.button_transparent Click me
-          //-   button.button.button_transparent.button_transparent-hover Click me
-          //- .form-elements__row
-          //-   button.button Click me
-          //-   button.button.button_c_ds-50 Click me
-          //- .form-elements__row
-          //-   button.button.button_opaque.button_with-arrow перейти к оплате
-          //- .form-elements__row
-          //-   h3.title.title_s pagination
-          //-   +pagination
+          +benefits-list({
+            'Комфорт': 'Шумопоглощающие стены',
+            'Удобство': 'Окно в каждой из спален',
+          })
