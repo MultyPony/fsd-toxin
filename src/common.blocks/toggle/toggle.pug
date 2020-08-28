@@ -3,6 +3,6 @@ mixin toggle(options)
   .toggle
     //- legend.toggle__title.title.title_s= options.title
     label.toggle__label(for= options.id) 
-        input.toggle__checkbox(type="checkbox" id= options.id name="" value= options.value)
+        input.toggle__checkbox(type="checkbox" id= options.id name="" value= options.value checked= options.checked)
         span.toggle__checkbox-icon
         span.toggle__text.text= options.text

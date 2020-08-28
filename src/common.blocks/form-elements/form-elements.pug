@@ -22,85 +22,85 @@ include ../review/review
 
 mixin form-elements
   section.ui-section.form-elements
-    .form-elements__container
-      section.form-elements__main-elements
-        .form-elements__col
-          ul.dropdown-list
-            li.dropdown-list__item
-              +ui-state('Default')
-                +text-field({label: 'Text Field', placeholder: 'Email', id: 'tf-default'})
-            li.dropdown-list__item
-              +ui-state('Hover / Focus', 'ui-state__label_top_0').ui-state_active
-                +text-field({label: 'Text Field', placeholder: 'Email', id: 'tf-hover-focus', value: 'This is pretty awesome'})
-            li.dropdown-list__item
-              +ui-state('Default')
-                +dropdown({label: 'Dropdown', id: 'tf-hover-focus', value: 'Сколько гостей'}, ['спальни', 'кровати', 'ванные комнаты'])
-            li.dropdown-list__item
-              +ui-state('Default')         
-                +masked-text-field({label: 'Masked Text Field', placeholder: 'ДД.ММ.ГГГГ'})
-            li.dropdown-list__item
-              +date-dropdown({placeholder: 'ДД.ММ.ГГГГ', val1: 'ДД.ММ.ГГГГ', val2: '19.08.2019'})
-            li.dropdown-list__item
-              +filter-date-dropdown({label: 'filter date dropdown', value: '19 авг - 23 авг'})
-            li.dropdown-list__item
-              +subscription-text-field({label: 'subscription text field', placeholder: 'Email'})
+    section.form-elements__main-elements
+      ul.input-list
+        li.input-list__item
+          +ui-state('Default')
+            +text-field({label: 'Text Field', placeholder: 'Email', id: 'tf-default'})
+        li.input-list__item
+          +ui-state('Hover / Focus', 'ui-state__label_top_0').ui-state_active
+            +text-field({label: 'Text Field', placeholder: 'Email', id: 'tf-hover-focus', value: 'This is pretty awesome'})
+        li.input-list__item
+          +ui-state('Default')
+            +dropdown({label: 'Dropdown', id: 'tf-hover-focus', value: 'Сколько гостей', opened: false}, ['взрослые', 'дети'], ['младенцы'])
+        li.input-list__item
+          +ui-state('Default')         
+            +masked-text-field({label: 'Masked Text Field', id: 'maskDate', placeholder: 'ДД.ММ.ГГГГ'})
+        li.input-list__item
+          +date-dropdown({placeholder: 'ДД.ММ.ГГГГ', val1: 'ДД.ММ.ГГГГ', val2: '19.08.2019'})
+        li.input-list__item
+          +filter-date-dropdown({label: 'filter date dropdown', value: '19 авг - 23 авг'})
+        li.input-list__item
+          +subscription-text-field({label: 'subscription text field', placeholder: 'Email'})
 
-        .form-elements__col
-          ul.check-buttons-list
-            li.check-buttons-list__item
-              +checkbox-buttons({title: 'Checkbox Buttons'},
-              {
-                'smoking':'Можно курить',
-                'pets': 'Можно с питомцами',
-                'guests':'Можно пригласить гостей (до 10 человек)',
-              })
-            li.check-buttons-list__item
-              +radio-buttons({title: 'Radio Buttons'}, {'men': 'Мужчина', 'women': 'Женщина'})
-            li.check-buttons-list__item
-              h3.title.title_s toggle
-              +toggle({title: 'toggle', text: 'Получать спецпредложения', id: 'special'})
-              +toggle({text: 'Получать спецпредложения', id: 'special2'})
-            li.check-buttons-list__item
-              h3.title.title_s.check-buttons-list__title like button
-              .form-elements__likes-wrap
-                //- +like-button(11)
-                //- +like-button(2)
-            li.check-buttons-list__item
-              h3.title.title_s.check-buttons-list__title rate button
-              .form-elements__rate-wrap
-                +rate-button(4)
-                +rate-button(5)
+      ul.check-buttons-list
+        li.check-buttons-list__item
+          +checkbox-buttons('Checkbox Buttons',
+          [
+            {id: 'smoking', text: 'Можно курить', checked: false},
+            {id: 'pets', text: 'Можно с питомцами', checked: true},
+            {id: 'guests', text: 'Можно пригласить гостей (до 10 человек)', checked: true}
+          ])
+        li.check-buttons-list__item
+          +radio-buttons('Radio Buttons', 
+          [
+            {id: 'men', text: 'Мужчина', checked: true},
+            {id: 'women', text: 'Женщина'}
+          ])
+        li.check-buttons-list__item
+          h3.title.title_s toggle
+          +toggle({title: 'toggle', text: 'Получать спецпредложения', id: 'special', checked: true})
+          +toggle({text: 'Получать спецпредложения', id: 'special2', checked: false})
+        li.check-buttons-list__item
+          h3.title.title_s.check-buttons-list__title like button
+          .form-elements__likes-wrap
+            +like-button(12, true)
+            +like-button(2)
+        li.check-buttons-list__item
+          h3.title.title_s.check-buttons-list__title rate button
+          .form-elements__rate-wrap
+            +rate-button(4)
+            +rate-button(5)
 
-        .form-elements__col
-          ul.slider-btns-list
-            li.slider-btns-list__item
-              +range-slider({title: 'range slider'})
-            li.slider-btns-list__item
-              h3.title.title_s.slider-btns-list__title buttons
-              ul.buttons-list
-                li.buttons-list__item
-                  button.button.button_opaque Click me
-                  button.button.button_opaque.button_opaque-hover Click me
-                li.buttons-list__item
-                  button.button.button_transparent Click me
-                  button.button.button_transparent.button_transparent-hover Click me
-                li.buttons-list__item
-                  button.button Click me
-                  button.button.button_c_ds-50 Click me
-                li.buttons-list__item
-                  button.button.button_opaque.button_with-arrow перейти к оплате
-            li.slider-btns-list__item
-              h3.title.title_s.slider-btns-list__title pagination
-              +pagination
+      ul.slider-btns-list
+        li.slider-btns-list__item
+          +range-slider({title: 'range slider'})
+        li.slider-btns-list__item
+          h3.title.title_s.slider-btns-list__title buttons
+          ul.buttons-list
+            li.buttons-list__item
+              button.button.button_opaque Click me
+              button.button.button_opaque.button_opaque-hover Click me
+            li.buttons-list__item
+              button.button.button_transparent Click me
+              button.button.button_transparent.button_transparent-hover Click me
+            li.buttons-list__item
+              button.button Click me
+              button.button.button_c_ds-50 Click me
+            li.buttons-list__item
+              button.button.button_opaque.button_with-arrow перейти к оплате
+        li.slider-btns-list__item
+          h3.title.title_s.slider-btns-list__title pagination
+          +pagination
 
 
-      section.form-elements__dropdowns
+      //- section.form-elements__dropdowns
         .form-elements__col
-          //- +ui-state('Default').form-elements__row
-          //-   +dropdown({label: 'Dropdown', id: 'tf-hover-focus', value: '2 спальни, 2 кровати...'}, ['Ivan', 'Alex', 'Anton'])
+          +ui-state('Default').form-elements__row
+            +dropdown({label: 'Dropdown', id: 'tf-hover-focus', value: '2 спальни, 2 кровати...'}, ['Ivan', 'Alex', 'Anton'])
           //- +ui-state('expanded').form-elements__row
           //-   +dropdown({label: 'Dropdown', id: 'tf-hover-focus', value: '2 спальни, 2 кровати...'}, ['Ivan', 'Alex', 'Anton'])
-      section.form-elements__lists-and-checkboxs
+      //- section.form-elements__lists-and-checkboxs
         .form-elements__col
           //- +ext-checkbox-list({title: 'expandable checkbox list'},{
           //-       'alco':'Можно бухать',
@@ -132,7 +132,7 @@ mixin form-elements
             'Время прибытия — после 13:00,\n а выезд до 12:00'
           ])
         
-      section.form-elements__other
+      //- section.form-elements__other
         .form-elements__col
           +benefits-list({
             'Комфорт': 'Шумопоглощающие стены',

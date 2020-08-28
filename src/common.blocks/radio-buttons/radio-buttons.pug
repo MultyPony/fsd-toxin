@@ -1,11 +1,11 @@
-mixin radio-buttons(options, arr)
+mixin radio-buttons(title, arr)
 
   fieldset.radio-buttons
-    legend.radio-buttons__title.title.title_s= options.title
+    legend.radio-buttons__title.title.title_s= title
     ul.radio-buttons__list
-      each val, key in arr
+      each option in arr
         li.radio-buttons__item
-          label.radio-buttons__label(for= key)
-            input.radio-buttons__input(id= key  type="radio" name="radio-button" value= key)
+          label.radio-buttons__label(for= option.id)
+            input.radio-buttons__input(id= option.id  type="radio" name="radio-button" value= option.id checked= option.checked)
             span.radio-buttons__icon
-            span.radio-buttons__value.text= val
+            span.radio-buttons__value.text= option.text
