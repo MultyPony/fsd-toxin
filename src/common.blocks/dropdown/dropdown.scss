@@ -2,7 +2,7 @@
 @import '../input-num/input-num.scss';
 
 .dropdown {
-    width: 100%;
+    width: 300px;
 }
 
 .dropdown__wrap {
@@ -143,17 +143,26 @@
       padding: 0;
   }
 
-  .dropdown__apply-btn {
-      padding: 0;
-      margin-top: 13px;
-
-      border: none;
-      background: transparent;
-
-      cursor: pointer;
-  }
-
+  
   .dropdown__btn-row {
       display: flex;
       justify-content: space-between;
+    }
+    
+    .dropdown__reset-btn, .dropdown__apply-btn {
+        margin-top: 13px;
+    }
+
+    .dropdown__reset-btn {
+        visibility: hidden;
+    }
+
+    .dropdown__reset-btn_visible {
+        visibility: visible;
+    }
+
+  @media (min-width: 720px) {
+    .dropdown {
+        width: 320px;
+    }
   }

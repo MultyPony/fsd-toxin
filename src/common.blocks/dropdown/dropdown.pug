@@ -1,14 +1,26 @@
 include ../base-dropdown/base-dropdown
 include ../input-num/input-num
 
-mixin dropdown(options, arr)
-  +base-dropdown(options)(class= 'dropdown ' + ((attributes.class == undefined) ? '' : attributes.class))
+mixin dropdown(options, guests, babies)
+  - var className = options.opened ? 'dropdown show' : 'dropdown';
+  - var babies = babies === undefined ? [] : babies;
+  
+    +base-dropdown(options)(class= className + ((attributes.class == undefined) ? '' : attributes.class))  
       .dropdown__menu
         ul.dropdown__menu-list
-          each val in arr
-            li.dropdown__menu-item
+          each val in guests
+            li.dropdown__menu-item.dropdown__guests
+              p.title.title_s.dropdown__menu-title= val
+              +input-num({val: 0})
+          each val in babies
+            li.dropdown__menu-item.dropdown__babies
               p.title.title_s.dropdown__menu-title= val
               +input-num({val: 0})          
-        //- .dropdown__btn-row
-        //-   input(type="reset" value="очистить").title.title_s.title_color_ds-50.dropdown__apply-btn
-        //-   button.title.title_s.title_color_purple.dropdown__apply-btn применить
+        .dropdown__btn-row
+          input(type="reset" value="очистить").button.button_c_ds-50.dropdown__reset-btn
+          button.button.dropdown__apply-btn применить
+
+        //- if (options.opened)
+        //-   +base-dropdown(options)(class= 'dropdown ' + ((attributes.class == undefined) ? '' : attributes.class))
+        //- else
+        //-   +base-dropdown(options)(class= 'dropdown ' + ((attributes.class == undefined) ? '' : attributes.class))

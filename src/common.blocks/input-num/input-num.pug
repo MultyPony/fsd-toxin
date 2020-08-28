@@ -1,5 +1,8 @@
 mixin input-num(options)
+  - var isDisabled = options.val == 0 ? true : false;
+  - var className = isDisabled ? 'input-num__btn_disabled' : '';
+
   .input-num
-    button.input-num__btn.input-num__btn_disabled(id="" name="button") -
-    input.input-num__display.title.title_s(id="" type="number" name="" value= options.val )
-    button.input-num__btn(id="" name="button") +
+    button.input-num__btn.input-num__min-btn(id="" name="button" class= className) -
+    input.input-num__display.title.title_s(id="" type="number" name="" value= options.val readonly)
+    button.input-num__btn.input-num__max-btn(id="" name="button") +
