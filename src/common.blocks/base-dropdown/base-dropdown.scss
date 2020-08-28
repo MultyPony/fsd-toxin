@@ -30,3 +30,7 @@
 
     border-color: $dark-shade-50;
 }
+
+.base-dropdown__arrow:active {
+    background-position: center bottom 1em;
+}

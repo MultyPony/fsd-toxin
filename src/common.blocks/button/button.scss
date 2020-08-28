@@ -66,3 +66,13 @@
     right: 14px;
     top: 13px;
 }
+
+.button:active {
+    // padding-left: 5px;
+    left: 2px;
+}
+
+.button_opaque:active, .button_transparent:active {
+    left: 0;
+    padding-left: 3px;
+} 
