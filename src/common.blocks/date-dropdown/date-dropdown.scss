@@ -1,5 +1,5 @@
 .date-dropdown {
-    width: 320px;
+    width: 300px;
 }
 
 .date-dropdown__wrapper {
@@ -7,6 +7,12 @@
     justify-content: space-between;
 }
 
-.date-dropdown__start, .date-dropdown__end{
-    width: 150px;
+.date-dropdown__start {
+    margin-right: 20px;
+}
+
+@media (min-width: 720px) {
+    .date-dropdown {
+        width: 320px;
+    }
 }

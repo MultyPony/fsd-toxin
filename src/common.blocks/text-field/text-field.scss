@@ -1,5 +1,5 @@
 .text-field {
-    width: 100%;
+    width: 300px;
 }
 
 
@@ -41,4 +41,10 @@
     line-height: 15px;
     text-transform: uppercase;
     color: $dark-shade-100;
+}
+
+@media (min-width: 720px) {
+    .text-field {
+        width: 320px;
+    }
 }
