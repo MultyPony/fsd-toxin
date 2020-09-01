@@ -1,0 +1,63 @@
+.title {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: bold;
+    /* Dark 100% */
+    color: var(--dark-shade-100);
+}
+
+.title_l {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.title_m {
+    font-size: 19px;
+    line-height: 24px;
+}
+
+.title_s {
+    font-family: 'Montserrat';
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    text-transform: uppercase;
+}
+.text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+
+    /* Dark 75% */
+    color: var(--dark-shade-75);
+}
+@font-face {
+    font-family: "Quicksand";
+    src: url(fonts/Quicksand-VariableFont_wght.ttf),
+         url(fonts/Quicksand-Regular.eot) format('embedded-opentype'),
+         url(fonts/Quicksand-Regular.otf) format('opentype'),
+         url(fonts/Quicksand-Regular.svg) format('svg'),
+         url(fonts/Quicksand-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(fonts/Montserrat-Regular.ttf),
+         url(fonts/Montserrat-Regular.eot) format('embedded-opentype'),
+         url(fonts/Montserrat-Regular.otf) format('opentype'),
+         url(fonts/Montserrat-Regular.svg) format('svg'),
+         url(fonts/Montserrat-Regular.woff) format('woff');
+}
+
+:root {
+    --dark-shade-100: #1F2041;
+    --dark-shade-75: rgba(31, 32, 65, 0.75);
+    --dark-shade-50: rgba(31, 32, 65, 0.5);
+    --dark-shade-25: rgba(31, 32, 65, 0.25);
+    --dark-shade-5: rgba(31, 32, 65, 0.05);
+
+    --purple: #BC9CFF;
+    --green: #6FCF97;
+  }
